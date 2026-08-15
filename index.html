@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Épicerie bio à Parakou : farines, épices naturelles, jus et produits naturels. Livraison rapide et paiement à la livraison disponible." />
+  <meta name="keywords" content="épicerie bio, épices naturelles, farines bio, livraison Parakou, produits naturels Bénin" />
+  <meta name="author" content="Épicière" />
+  <meta name="theme-color" content="#1faa59" />
+  <meta property="og:title" content="Épicerie Bio & Épices Naturelles à Parakou" />
+  <meta property="og:description" content="Farines bio, épices naturelles et produits du quotidien livrés à Parakou et dans la région." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://votreepicierebio.netlify.app/images/logo.jpg" />
+  <meta property="og:url" content="https://votreepicierebio.netlify.app/" />
+  <link rel="canonical" href="https://votreepicierebio.netlify.app/" />
+  <title>Épicerie Bio & Épices Naturelles à Parakou</title>
+
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+  <link rel="apple-touch-icon" href="images/logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <!-- Palette & styles épicerie -->
+  <link href="css/custom.css" rel="stylesheet" />
+
+  <!-- Google Analytics : cree une propriete GA4 sur analytics.google.com,
+       recupere ton identifiant de mesure (ex: G-ABC123XYZ0),
+       et remplace G-XXXXXXXXXX ci-dessous par cet identifiant sur les 5 pages du site -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-epicerie sticky-top">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="logo"> EPICIERE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link" href="#products" onclick="filterProducts('farine')">Farines</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products" onclick="filterProducts('epice')">Épices</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products" onclick="filterProducts('jus')">Jus</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products" onclick="filterProducts('naturel')">Produits naturels</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn btn-cart" type="button" onclick="openCart()">
+          <i class="bi-cart-fill me-1"></i> Panier (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <button class="btn-floating-cart" type="button" onclick="openCart()" aria-label="Ouvrir le panier">
+    <i class="bi-cart-fill"></i>
+    <span>Panier</span>
+    <span id="floating-cart-count">0</span>
+  </button>
+
+  <!-- Header / Hero -->
+  <header class="hero-brand py-5">
+    <div class="container px-4 px-lg-5 my-0 position-relative">
+      <div class="text-center text-white">
+        <div class="hero-badge"><span class="dot"></span> Produits 100% bio & naturels</div>
+        <h1 class="display-5 fw-bolder">Produits Bio & Épices Naturelles</h1>
+        <p class="lead fw-normal text-white-50 mb-0">Farines • Épices • Jus • Produits naturels</p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+          <a href="#products" class="btn btn-brand-light">Voir les produits</a>
+          <a href="tel:+2290144917003" class="btn btn-outline-light">📞 Appeler maintenant</a>
+        </div>
+
+        <a href="#products" class="scroll-cue" aria-label="Découvrir les produits">
+          Découvrir
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section produits -->
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-3">
+
+      <!-- Filtres (générés dynamiquement par script.js) -->
+      <div class="search-bar-row mx-auto mb-4">
+        <div class="search-bar">
+          <input type="search" id="product-search" class="form-control" placeholder="Rechercher un produit (ex: ail, curcuma...)" oninput="searchProducts(this.value)" aria-label="Rechercher un produit">
+        </div>
+        <button type="button" id="favorites-toggle-btn" class="btn-favorites-toggle" onclick="toggleFavoritesView()">
+          ❤ Mes favoris (<span id="favorites-count">0</span>)
+        </button>
+      </div>
+
+      <div class="filterProducts d-flex flex-wrap justify-content-center gap-2 mb-4"></div>
+
+      <p id="search-empty" class="text-center text-muted" style="display:none;">Aucun produit ne correspond à votre recherche.</p>
+
+      <!-- Produits (générés dynamiquement par script.js à partir du Google Sheet) -->
+      <div id="products" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"></div>
+
+    </div>
+  </section>
+
+  <section class="py-4 py-lg-5">
+    <div class="container px-4 px-lg-5">
+      <div class="trust-banner">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2>Commandez facilement en quelques minutes</h2>
+            <p>Farines bio, épices naturelles et produits du quotidien livrés rapidement à Parakou et dans la région.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="https://wa.me/2290144917003?text=Bonjour%20%C3%89pici%C3%A8re%2C%20je%20souhaite%20commander%20des%20produits" target="_blank" class="btn btn-add-cart">Commander sur WhatsApp</a>
+              <a href="#products" class="btn btn-outline-brand">Voir les produits</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="trust-points">
+              <div>🚚 Livraison rapide 24h/24</div>
+              <div>💳 Paiement à la livraison</div>
+              <div>🌿 Produits naturels et bio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offcanvas Panier -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="cartLabel">🛒 Mon panier</h5>
+      <button type="button" class="btn-close" aria-label="Fermer" onclick="closeCart()"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cart-items"></div>
+      <h6>Total produits : <span id="subtotal">0</span> FCFA</h6>
+
+      <div class="cart-delivery-option">
+        <h4>Option de livraison</h4>
+        <label>
+          <input type="radio" name="cart-delivery" value="yes" checked>
+          Oui (livraison à domicile + 700 FCFA)
+        </label>
+        <label>
+          <input type="radio" name="cart-delivery" value="no">
+          Non (retrait en boutique, pas de frais)
+        </label>
+        <p class="mb-0 small">Frais de livraison : <span id="delivery-fee">700</span> FCFA</p>
+
+        <div id="location-block" class="mt-3">
+          <button type="button" id="location-btn" class="btn-location" onclick="shareLocation()">
+            📍 Partager ma position pour la livraison
+          </button>
+          <p id="location-status" class="small mt-2 mb-0"></p>
+        </div>
+      </div>
+
+      <h6>Total à payer : <span id="total">700</span> FCFA</h6>
+
+      <button type="button" class="btn-checkout" onclick="checkout()">Commander via WhatsApp</button>
+      <button type="button" class="btn-close-cart" onclick="closeCart()">Fermer</button>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mb-4" style="color: var(--green-darker);">Comment commander ?</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="step-card">
+            <h3>1. Choisissez</h3>
+            <p>Parcourez nos produits et sélectionnez vos articles préférés.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <h3>2. Passez votre commande</h3>
+            <p>Ajoutez les produits au panier et validez via WhatsApp.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <h3>3. Recevez chez vous</h3>
+            <p>Profitez d’une livraison rapide à Parakou et dans la région.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mb-4" style="color: var(--green-darker);">Produits phares</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>🌾 Farines bio</h3>
+            <p>Parfaites pour la cuisine quotidienne, la pâtisserie et les préparations maison.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>🧂 Épices naturelles</h3>
+            <p>Des saveurs authentiques pour sublimer vos plats avec des arômes puissants.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>🥤 Jus & produits naturels</h3>
+            <p>Des boissons et produits du quotidien pour une alimentation plus saine.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4 pb-5">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mb-4" style="color: var(--green-darker);">Ce que disent nos clients</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <blockquote class="testimonial-card">
+            <img src="images/avis/avis-jacques.jpg" alt="Avis client Jacques" class="testimonial-proof" onclick="openImageModal(this.src)">
+            <p>“Tu vois comment je mange ton tapioca moi ? J'adore, c'est simplement délicieux.”</p>
+            <footer>— Jacques</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="testimonial-card">
+            <img src="images/avis/avis-zouly.jpg" alt="Avis client Zouly" class="testimonial-proof" onclick="openImageModal(this.src)">
+            <p>“J'ai trop aimé 👌 Merci beaucoup tata.”</p>
+            <footer>— Zouly</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="testimonial-card">
+            <p>“J'ai vraiment beaucoup aimé. J'ai goûté le piment noir et c'était vraiment vraiment bon.”</p>
+            <footer>— Cliente à Parakou</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info -->
+  <section class="info-brand text-center py-5">
+    <div class="container">
+      <h2 class="mb-4">Informations</h2>
+      <p>📍 Parakou / Zongo</p>
+      <p>🕒 9h - 20h</p>
+      <p>🚚 Livraison possible</p>
+    </div>
+  </section>
+
+  <!-- Footer-->
+  <footer class="py-5 footer-brand">
+    <div class="container px-4 px-lg-5">
+      <div class="row gy-3">
+        <div class="col-md-4">
+          <h4>Epicière</h4>
+          <p>Produits naturels et épices bio à Parakou</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Contact</h4>
+          <p class="mb-0">📍 Parakou, Bénin</p>
+          <p>📞 +229 01 44 91 70 03</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Légal</h4>
+          <a href="mentions-legales.html" class="d-block">Mentions légales</a>
+          <a href="politique-confidentialite.html" class="d-block">Politique de confidentialité</a>
+        </div>
+      </div>
+      <hr class="mt-4 mb-3">
+      <p class="m-0 text-center small">© 2026 Epicière - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="imageModal" class="modal-lightbox">
+    <span class="close" onclick="closeImageModal()">&times;</span>
+    <img id="modalImage" alt="Aperçu produit">
+  </div>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- CSV parsing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Logique du site -->
+  <script src="js/script.js"></script>
+</body>
+</html>

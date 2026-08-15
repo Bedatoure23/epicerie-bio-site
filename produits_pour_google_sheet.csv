@@ -1,0 +1,79 @@
+id_produit,nom_produit,categorie,emoji,image,contenance,prix
+farine,Farine de manioc,farine,🌾,farine-manioc.jpeg,1kg,1200
+5-epices,5 épices,epice,,5-epices-150g.jpeg,150g,2000
+5-epices,5 épices,epice,,5-epices-350g.jpeg,350g,4000
+5-epices,5 épices,epice,,5-epices-650g.jpeg,650g,6500
+farine-kom,Farine de Kom assaisonnée,farine,,farine-kom-assaisonnee.jpeg,500g,1000
+farine-kom,Farine de Kom assaisonnée,farine,,farine-kom-assaisonnee.jpeg,1kg,2000
+gingembre,Gingembre moulu,epice,,gingembre-moulu.jpeg,200g,2700
+cocktails-epices,Cocktails d'épices,epice,,cocktails-epices-200g.jpeg,200g,2000
+cocktails-epices,Cocktails d'épices,epice,,cocktails-epices-100g.jpeg,100g,1000
+cocktails-epices,Cocktails d'épices,epice,,cocktails-epices-70g.jpeg,70g,500
+cocktails-epices,Cocktails d'épices,epice,,cocktails-epices-350g.jpeg,350g,4000
+cocktails-epices,Cocktails d'épices,epice,,cocktails-epices-650g.jpeg,650g,6500
+piment-yazi,Piment Yazi,epice,,piment-yazi-350g.jpeg,350g,3500
+piment-yazi,Piment Yazi,epice,,piment-yazi-200g.jpeg,200g,2000
+piment-yazi,Piment Yazi,epice,,piment-yazi-100g.jpeg,100g,1000
+piment-yazi,Piment Yazi,epice,,piment-yazi-70g.jpeg,70g,500
+poudre-clou-de-giroffle,Poudre de clou de giroffle,epice,,poudre-clou-de-giroffle-100g.jpeg,100g,1500
+badiane,La Badiane (anis étoilé),epice,,badiane-100g.jpeg,100g,1300
+poudre-moringa,Poudre de Moringa,epice,,poudre-moringa-70g.jpeg,70g,500
+poudre-canelle,Poudre de cannelle,epice,,poudre-canelle-10g.jpeg,10g,500
+ma-marinade,Ma Marinade,epice,,marinade-400g.jpeg,400g,2000
+piment-vert-assaisonne,Piment vert assaisonné,epice,,piment-vert-assaisonne-400g.jpeg,400g,1500
+piment-vert-assaisonne,Piment vert assaisonné,epice,,piment-vert-assaisonne-300g.jpeg,300g,700
+kpedora,KPEDORA,epice,,kpedora-320g.jpeg,320g,1500
+kpedora,KPEDORA,epice,,kpedora-300g.jpeg,300g,700
+sel-magic,Sel Magic,epice,,sel-magic-500g.jpeg,500g,2000
+sel-magic,Sel Magic,epice,,sel-magic-300g.jpeg,300g,1300
+sel-magic,Sel Magic,epice,,sel-magic-100g.jpeg,100g,500
+poudre-curcuma,Poudre de curcuma,epice,,poudre-curcuma-150g.jpeg,150g,1300
+poudre-curcuma,Poudre de curcuma,epice,,poudre-curcuma-70g.jpeg,70g,500
+puree-gingembre,Purée de gingembre,epice,,puree-gingembre.jpeg,300g,1500
+puree-ail,Purée d'ail,epice,,puree-ail.jpeg,300g,1500
+epice-viande,Épice viande,epice,,epice-viande-150g.jpeg,150g,2300
+epice-viande,Épice viande,epice,,epice-viande-100g.jpeg,100g,1200
+epice-viande,Épice viande,epice,,epice-viande-700g.jpeg,700g,500
+farine-mais,Farine de maïs assaisonnée torrifiée| Farine de Amiwo,farine,,farine-mais-assaisonnee.jpeg,500g,1200
+farine-mais,Farine de maïs assaisonnée torrifiée| Farine de Amiwo,farine,,farine-mais-assaisonnee.jpeg,1kg,2000
+puree-tomate,Purée de tomate,epice,,puree-tomate.jpeg,300g,1500
+farine-igname,Farine de Cossette d'Igname,farine,,farine-cossette-igname.jpeg,1kg,2000
+farine-igname,Farine de Cossette d'Igname,farine,,farine-cossette-igname.jpeg,5kg,7200
+farine-haricot,Farine de haricot,farine,🌾,farine-haricot.jpeg,500g,1500
+farine-haricot,Farine de haricot,farine,🌾,farine-haricot.jpeg,1kg,2200
+wassa-wassa,WASSA WASSA PRECUIT,farine,🌾,wassa-wassa.jpeg,300g,1000
+wassa-wassa,WASSA WASSA PRECUIT,farine,🌾,wassa-wassa.jpeg,500g,2000
+piment-noir,Piment noir de kom,epice,,piment-noir-kom.jpeg,300g,1500
+piment-noir,Piment noir de kom,epice,,piment-noir-kom.jpeg,100g,500
+piment-noir,Piment noir de kom,epice,,piment-noir-kom.jpeg,500g,2500
+graine-moutarde,Graine de moutarde,epice,,placeholder.jpg,100g,1000
+graine-moutarde-moulu,Graine de moutarde moulu,epice,,placeholder.jpg,100g,2000
+graine-chiiya,Graine Chiiya,epice,,placeholder.jpg,70g,1000
+graine-lyn,Graine de lyn,epice,,placeholder.jpg,70g,1000
+graine-fenugrec,Graine de fénugrec,epice,,placeholder.jpg,100g,500
+poudre-fenugrec,Poudre de Fenugrec,epice,,placeholder.jpg,70g,700
+graine-apki,Graine de Apki,epice,,placeholder.jpg,70g,700
+poudre-apki,Poudre de Apki,epice,,placeholder.jpg,70g,800
+badiane-50g,La Badiane,epice,,placeholder.jpg,50g,500
+cumin,Cumin,epice,,placeholder.jpg,70g,500
+romarin-moulu,Romarin Moulu,epice,,placeholder.jpg,70g,500
+poivre-blanc,Poivre Blanc,epice,,placeholder.jpg,50g,800
+poivre-blanc-moulu,Poivre blanc moulu,epice,,placeholder.jpg,70g,2000
+gingembre-moulu-nouveau,Gingembre Moulu,epice,,placeholder.jpg,70g,800
+gingembre-moulu-nouveau,Gingembre Moulu,epice,,placeholder.jpg,150g,2000
+cadamum,Cadamum,epice,,placeholder.jpg,50g,1000
+cadamum,Cadamum,epice,,placeholder.jpg,400g,15000
+poivre-noir-70g,Poivre noir,epice,,placeholder.jpg,70g,500
+laurier-moulu,Laurier Moulu,epice,,placeholder.jpg,100g,1300
+ail-moulu,Ail Moulu,epice,,placeholder.jpg,100g,1500
+crevette-moulu,Crevette moulu,epice,,placeholder.jpg,100g,1500
+clou-de-girofle,Clou de girofle,epice,,placeholder.jpg,50g,500
+rondelle,Rondelle,epice,,placeholder.jpg,100g,800
+rondelle-moulu,Rondelle Moulu,epice,,placeholder.jpg,100g,2500
+elixir-souchet,Elixir drink SOUCHET (pack de 6),jus,🥤,elixir-souchet.jpeg,Pack de 6,1800
+cocktail-ananas-papaye,Cocktail ANANAS & PAPAYE (pack de 6),jus,🥤,cocktail-ananas-papaye.jpeg,Pack de 6,2500
+cocktail-ananas-gingembre,Cocktail ANANAS & GINGEMBRE (pack de 6 bouteilles de 25 cl),jus,🥤,cocktail-ananas-gingembre.jpeg,Pack de 6,3000
+cocktail-ananas-citron,Cocktail ANANAS & CITRON (pack de 6 bouteilles de 33 cl),jus,🥤,cocktail-ananas-citron.jpeg,Pack de 6,2500
+cocktail-ananas-baobab,Cocktail ANANAS & BAOBAB (pack de 6 bouteilles de 33 cl),jus,🥤,cocktail-ananas-baobab.jpeg,Pack de 6,2500
+sirop-gingembre,Sirop de gingembre,jus,🥤,placeholder.jpg,1l,2500
+sirop-gingembre,Sirop de gingembre,jus,🥤,placeholder.jpg,"0,5l",1500
