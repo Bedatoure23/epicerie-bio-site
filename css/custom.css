@@ -251,14 +251,28 @@ h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
 .btn-favorite:hover { transform: scale(1.1); }
 .btn-favorite.active { background: #fff; }
 
+.card-footer.d-flex { align-items: center; }
+
+.btn-add-cart {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .btn-share {
   background: #25D366;
   color: #fff;
   border: none;
-  border-radius: 100px;
+  border-radius: 50%;
   width: 44px;
+  height: 44px;
+  min-width: 44px;
   flex-shrink: 0;
   font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   transition: background 0.2s;
 }
 .btn-share:hover { background: #1eb757; color: #fff; }
@@ -451,13 +465,51 @@ h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   background: var(--green-pale);
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 10px 12px;
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
-.cart-item-row button { background: none; border: none; cursor: pointer; }
+.cart-item-info { min-width: 0; flex: 1; }
+.cart-item-info p { font-weight: 600; overflow-wrap: break-word; }
+.cart-item-total { font-size: 0.82rem; color: var(--green-darker); font-weight: 600; }
+
+.cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--green-tint);
+  background: #fff;
+  color: var(--green-darker);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.qty-btn:hover { background: var(--green-tint); }
+.qty-value { min-width: 18px; text-align: center; font-weight: 600; }
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.remove-btn:hover { opacity: 1; }
 .cart-delivery-option {
   background: var(--green-pale-2);
   border-radius: 12px;
@@ -547,6 +599,50 @@ h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
   font-size: 2.2rem;
   cursor: pointer;
 }
+
+.gallery-viewport {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color: var(--green-darker);
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.2s;
+}
+.gallery-arrow:hover { background: #fff; }
+.gallery-arrow-left { left: 10px; }
+.gallery-arrow-right { right: 10px; }
+
+.gallery-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+}
+.gallery-dot.active { background: #fff; }
+
 .pop-anim {
   position: fixed;
   bottom: 30px;
@@ -575,4 +671,23 @@ h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; }
   .hero-brand h1 { font-size: 1.5rem; }
   .hero-brand .lead { font-size: 0.92rem; }
   .hero-badge { font-size: 0.76rem; padding: 6px 14px; }
+
+  /* Cartes produits plus compactes sur petit écran */
+  .products { --bs-gutter-x: 0.75rem; }
+  .product-item .card-body { padding: 0.65rem !important; }
+  .product-item .card-footer { padding: 0.65rem !important; padding-top: 0 !important; }
+  .product-item .card-img-top { height: 110px; }
+  .product-item .card-body h5 { font-size: 0.82rem; line-height: 1.25; margin-bottom: 6px; }
+  .product-item .form-label { font-size: 0.68rem; margin-bottom: 2px; margin-top: 6px; }
+  .product-item .form-select, .product-item .form-control { font-size: 0.78rem; padding: 5px 8px; }
+  .price-tag { font-size: 0.85rem !important; margin: 6px 0 2px !important; }
+  .btn-add-cart { font-size: 0.78rem; padding: 8px 6px; }
+  .btn-share { width: 36px; height: 36px; min-width: 36px; font-size: 0.9rem; }
+  .btn-favorite { width: 28px; height: 28px; font-size: 0.95rem; top: 6px; right: 6px; }
+}
+
+@media (max-width: 360px) {
+  .products { row-gap: 0.75rem; }
+  .btn-share { width: 32px; height: 32px; min-width: 32px; font-size: 0.82rem; }
+  .btn-add-cart { font-size: 0.74rem; padding: 8px 4px; }
 }

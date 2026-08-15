@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/produits-admin"
+public_folder: "images/produits-admin"
+
+collections:
+  - name: "produits"
+    label: "Produits"
+    files:
+      - file: "data/produits.json"
+        label: "Catalogue produits"
+        name: "catalogue"
+        fields:
+          - label: "Produits"
+            name: "produits"
+            widget: "list"
+            summary: "{{fields.nom_produit}}"
+            fields:
+              - label: "Identifiant (sans espace ni accent, ex: ail-moulu)"
+                name: "id_produit"
+                widget: "string"
+              - label: "Nom du produit"
+                name: "nom_produit"
+                widget: "string"
+              - label: "Catégorie"
+                name: "categorie"
+                widget: "select"
+                options: ["epice", "farine", "jus", "naturel"]
+              - label: "Emoji (facultatif)"
+                name: "emoji"
+                widget: "string"
+                required: false
+              - label: "Image principale"
+                name: "image"
+                widget: "image"
+              - label: "Image 2 (facultatif)"
+                name: "image2"
+                widget: "image"
+                required: false
+              - label: "Image 3 (facultatif)"
+                name: "image3"
+                widget: "image"
+                required: false
+              - label: "Contenances et prix"
+                name: "variants"
+                widget: "list"
+                summary: "{{fields.contenance}} — {{fields.prix}} FCFA"
+                fields:
+                  - label: "Contenance"
+                    name: "contenance"
+                    widget: "string"
+                  - label: "Prix (FCFA)"
+                    name: "prix"
+                    widget: "number"
+                    value_type: "int"

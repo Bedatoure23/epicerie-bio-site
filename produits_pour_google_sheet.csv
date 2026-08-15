@@ -1,4 +1,4 @@
-id_produit,nom_produit,categorie,emoji,image,contenance,prix
+id_produit,nom_produit,categorie,emoji,image,contenance,prix,image2,image3
 farine,Farine de manioc,farine,🌾,farine-manioc.jpeg,1kg,1200
 5-epices,5 épices,epice,,5-epices-150g.jpeg,150g,2000
 5-epices,5 épices,epice,,5-epices-350g.jpeg,350g,4000

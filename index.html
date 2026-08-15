@@ -38,6 +38,41 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
+  <!-- Donnees structurees Schema.org : aide Google a afficher des infos enrichies
+       (adresse, horaires, telephone) directement dans les resultats de recherche -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "Épicière Bio",
+    "description": "Épicerie bio à Parakou : farines, épices naturelles, jus et produits naturels.",
+    "url": "https://votreepicierebio.netlify.app/",
+    "image": "https://votreepicierebio.netlify.app/images/logo.jpg",
+    "telephone": "+2290144917003",
+    "priceRange": "500-5000 XOF",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Parakou",
+      "addressRegion": "Borgou",
+      "addressCountry": "BJ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.3682488,
+      "longitude": 2.6332818
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/1CEfWZQ5aq/?mibextid=wwXIfr",
+      "https://www.tiktok.com/@epiciere229"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -290,16 +325,19 @@
     </div>
   </footer>
 
-  <!-- Lightbox -->
+  <!-- Lightbox / galerie multi-photos -->
   <div id="imageModal" class="modal-lightbox">
     <span class="close" onclick="closeImageModal()">&times;</span>
-    <img id="modalImage" alt="Aperçu produit">
+    <div class="gallery-viewport">
+      <button type="button" class="gallery-arrow gallery-arrow-left" onclick="prevGalleryImage(event)" aria-label="Photo précédente" style="display:none;">‹</button>
+      <img id="modalImage" alt="Aperçu produit">
+      <button type="button" class="gallery-arrow gallery-arrow-right" onclick="nextGalleryImage(event)" aria-label="Photo suivante" style="display:none;">›</button>
+    </div>
+    <div id="gallery-dots" class="gallery-dots" style="display:none;"></div>
   </div>
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- CSV parsing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <!-- Logique du site -->
   <script src="js/script.js"></script>
 </body>

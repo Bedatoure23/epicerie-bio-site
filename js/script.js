@@ -1,17 +1,12 @@
 // ======================
-// CONFIGURATION ADMIN (Google Sheet)
+// CONFIGURATION ADMIN
 // ======================
-// 1. Crée un Google Sheet avec les colonnes exactement dans cet ordre :
-//    id_produit | nom_produit | categorie | emoji | image | contenance | prix
-// 2. Une ligne = une contenance. Pour un produit avec plusieurs tailles,
-//    répète le même id_produit sur plusieurs lignes.
-// 3. Fichier > Partager > Publier sur le web > choisir "Feuille1" au format CSV
-// 4. Colle le lien obtenu ci-dessous (il ressemble à
-//    https://docs.google.com/spreadsheets/d/e/XXXX/pub?output=csv)
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQncvzPTTnv29RQ-FOZ6Gg8EvCc13EOWl8meYtLD7BHCHBoraJuCBz66Gga2eKVieX_Yeogi6xtzvaM/pub?output=csv";
+// Le catalogue est desormais gere depuis l'interface d'admin (/admin),
+// qui ecrit directement dans data/produits.json. Plus besoin de Google Sheet.
+const PRODUCTS_JSON_URL = "data/produits.json";
 
 // Libellés affichés pour les boutons de filtre (facultatif).
-// Si une catégorie du Sheet n'est pas dans cette liste, son nom brut est utilisé tel quel.
+// Si une catégorie n'est pas dans cette liste, son nom brut est utilisé tel quel.
 const CATEGORY_LABELS = {
   farine: "Farines",
   epice: "Épices",
@@ -23,25 +18,19 @@ let PRODUCTS = {}; // { id_produit: { nom, categorie, emoji, variants: [...] } }
 
 
 // ======================
-// CHARGEMENT DES PRODUITS DEPUIS LE GOOGLE SHEET
+// CHARGEMENT DES PRODUITS DEPUIS data/produits.json
 // ======================
 async function loadProducts() {
   const grid = document.getElementById("products");
 
-  if (!SHEET_CSV_URL || SHEET_CSV_URL.includes("COLLE_ICI")) {
-    grid.innerHTML = "<p class='text-center w-100 py-5'>Configuration requise : ajoute le lien du Google Sheet dans js/script.js (SHEET_CSV_URL).</p>";
-    return;
-  }
-
   grid.innerHTML = "<p class='text-center w-100 py-5'>Chargement des produits...</p>";
 
   try {
-    const response = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+    const response = await fetch(PRODUCTS_JSON_URL, { cache: "no-store" });
     if (!response.ok) throw new Error("Réponse réseau invalide");
-    const csvText = await response.text();
-    const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+    const data = await response.json();
 
-    PRODUCTS = groupProducts(parsed.data);
+    PRODUCTS = groupProducts(data.produits || []);
     renderCategoryFilters(PRODUCTS);
     renderProducts(PRODUCTS);
   } catch (err) {
@@ -54,8 +43,8 @@ async function loadProducts() {
 // RÉSOLUTION DU CHEMIN D'IMAGE
 // ======================
 // Accepte soit un nom de fichier local (dans images/), soit un lien direct
-// (ex: image hébergée sur imgbb.com ou Google Drive). Ça permet d'ajouter
-// une photo depuis le Google Sheet sans jamais avoir à republier le site.
+// (ex: image hébergée sur imgbb.com ou Google Drive), soit un chemin
+// genere par l'admin (images/produits-admin/...).
 function resolveImageSrc(image) {
   if (!image) return "images/placeholder.jpg";
   if (image.startsWith("http://") || image.startsWith("https://")) {
@@ -151,13 +140,26 @@ function toggleFavoritesView() {
 
 
 // ======================
-// PARTAGE PRODUIT (WhatsApp)
+// PARTAGE PRODUIT (API native du navigateur)
 // ======================
 function shareProduct(nom, id) {
   const price = getSelectedPrice(id);
   const siteUrl = window.location.origin + window.location.pathname.replace(/index\.html$/, "");
-  const message = `Regarde ce produit chez Epicière : ${nom} à partir de ${price} FCFA 😍\n${siteUrl}`;
-  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
+  const message = `Regarde ce produit chez Epicière : ${nom} à partir de ${price} FCFA 😍`;
+
+  if (navigator.share) {
+    // Ouvre le vrai sélecteur d'applications du téléphone (WhatsApp, Messenger, SMS, etc.)
+    navigator.share({
+      title: "Épicière Bio",
+      text: message,
+      url: siteUrl,
+    }).catch(() => {
+      // L'utilisateur a fermé la fenêtre de partage sans rien envoyer : rien à faire
+    });
+  } else {
+    // Repli pour les navigateurs qui ne gèrent pas le partage natif (surtout desktop)
+    window.open(`https://wa.me/?text=${encodeURIComponent(message + "\n" + siteUrl)}`, "_blank");
+  }
 }
 
 
@@ -168,21 +170,21 @@ function groupProducts(rows) {
     const id = (row.id_produit || "").trim();
     if (!id) return;
 
-    if (!grouped[id]) {
-      grouped[id] = {
-        id,
-        nom: (row.nom_produit || "").trim(),
-        categorie: (row.categorie || "").trim(),
-        emoji: (row.emoji || "").trim(),
-        variants: [],
-      };
-    }
+    const image = (row.image || "").trim();
 
-    grouped[id].variants.push({
-      contenance: (row.contenance || "").trim(),
-      prix: parseInt(row.prix, 10) || 0,
-      image: (row.image || "").trim(),
-    });
+    grouped[id] = {
+      id,
+      nom: (row.nom_produit || "").trim(),
+      categorie: (row.categorie || "").trim(),
+      emoji: (row.emoji || "").trim(),
+      // Photos supplementaires (facultatives) pour la galerie multi-angles.
+      extraImages: [row.image2, row.image3].map((v) => (v || "").trim()).filter(Boolean),
+      variants: (row.variants || []).map((v) => ({
+        contenance: (v.contenance || "").trim(),
+        prix: parseInt(v.prix, 10) || 0,
+        image: image,
+      })),
+    };
   });
 
   return grouped;
@@ -213,6 +215,52 @@ function renderProducts(products) {
   const cardsHtml = Object.values(products).map(buildCardHtml).join("");
   grid.innerHTML = cardsHtml;
   applyFavoriteStates();
+  injectProductStructuredData(products);
+}
+
+// ======================
+// DONNEES STRUCTUREES PRODUITS (Schema.org, generees dynamiquement)
+// ======================
+// Genere un JSON-LD a partir des produits reellement charges depuis le Google Sheet,
+// pour que les infos montrees a Google restent toujours a jour avec le site.
+function injectProductStructuredData(products) {
+  const siteUrl = window.location.origin + window.location.pathname.replace(/index\.html$/, "");
+
+  const itemListElement = Object.values(products).map((product, index) => {
+    const first = product.variants[0] || { prix: 0, image: "" };
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.nom,
+        "image": resolveImageSrc(first.image),
+        "category": product.categorie,
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "XOF",
+          "price": first.prix,
+          "availability": "https://schema.org/InStock",
+          "url": siteUrl
+        }
+      }
+    };
+  });
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": itemListElement
+  };
+
+  let scriptTag = document.getElementById("product-schema");
+  if (!scriptTag) {
+    scriptTag = document.createElement("script");
+    scriptTag.type = "application/ld+json";
+    scriptTag.id = "product-schema";
+    document.head.appendChild(scriptTag);
+  }
+  scriptTag.textContent = JSON.stringify(schema);
 }
 
 function buildCardHtml(product) {
@@ -221,7 +269,7 @@ function buildCardHtml(product) {
   const nomEscaped = nom.replace(/'/g, "\\'");
 
   const optionsHtml = variants.map((v, i) => {
-    const label = v.contenance ? `${v.contenance} - ${v.prix} FCFA` : `${v.prix} FCFA`;
+    const label = v.contenance ? v.contenance : `${v.prix} FCFA`;
     return `<option value="${v.prix}" data-image="${v.image}" ${i === 0 ? "selected" : ""}>${label}</option>`;
   }).join("");
 
@@ -229,7 +277,7 @@ function buildCardHtml(product) {
     <div class="col mb-5 product-item" data-category="${categorie}" data-search="${normalizeText(nom)}" data-id="${id}">
       <div class="card h-100">
         <div class="card-img-wrap">
-          <img class="card-img-top" src="${resolveImageSrc(first.image)}" alt="${nom}" id="img-${id}" onclick="openImageModal(this.src)">
+          <img class="card-img-top" src="${resolveImageSrc(first.image)}" alt="${nom}" id="img-${id}" onclick="openImageModal('${id}')">
           <button type="button" class="btn-favorite" id="fav-${id}" onclick="toggleFavorite('${id}')" aria-label="Ajouter aux favoris">♡</button>
         </div>
         <div class="card-body p-3">
@@ -251,10 +299,10 @@ function buildCardHtml(product) {
         </div>
         <div class="card-footer p-3 pt-0 border-top-0 bg-transparent d-flex gap-2">
           <button class="btn btn-add-cart flex-grow-1" onclick="addToCart('${nomEscaped}', getSelectedPrice('${id}'), 'qty-${id}')">
-            🛒 Ajouter
+            Ajouter
           </button>
           <button type="button" class="btn-share" onclick="shareProduct('${nomEscaped}', '${id}')" aria-label="Partager ce produit">
-            <i class="bi-whatsapp"></i>
+            <i class="bi-share-fill"></i>
           </button>
         </div>
       </div>
@@ -368,8 +416,16 @@ function updateCart() {
 
     cartItems.innerHTML += `
       <div class="cart-item-row">
-        <p class="mb-0">${item.name} x${item.qty} = ${itemTotal} FCFA</p>
-        <button onclick="removeItem(${index})">❌</button>
+        <div class="cart-item-info">
+          <p class="mb-1">${item.name}</p>
+          <span class="cart-item-total">${itemTotal} FCFA</span>
+        </div>
+        <div class="cart-item-qty">
+          <button type="button" class="qty-btn" onclick="decreaseQty(${index})" aria-label="Diminuer la quantité">−</button>
+          <span class="qty-value">${item.qty}</span>
+          <button type="button" class="qty-btn" onclick="increaseQty(${index})" aria-label="Augmenter la quantité">+</button>
+        </div>
+        <button type="button" class="remove-btn" onclick="removeItem(${index})" aria-label="Retirer l'article">❌</button>
       </div>
     `;
   });
@@ -395,6 +451,24 @@ function updateCart() {
 // ======================
 // SUPPRIMER ITEM
 // ======================
+// ======================
+// MODIFIER LA QUANTITE DEPUIS LE PANIER
+// ======================
+function increaseQty(index) {
+  if (!cart[index]) return;
+  cart[index].qty += 1;
+  updateCart();
+}
+
+function decreaseQty(index) {
+  if (!cart[index]) return;
+  cart[index].qty -= 1;
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+  updateCart();
+}
+
 function removeItem(index) {
   cart.splice(index, 1);
   updateCart();
@@ -618,13 +692,55 @@ function exitFavoritesView() {
 
 
 // ======================
-// LIGHTBOX MODAL
+// LIGHTBOX / GALERIE MULTI-PHOTOS
 // ======================
-function openImageModal(imgSrc) {
-  let modal = document.getElementById("imageModal");
-  let modalImg = document.getElementById("modalImage");
+let galleryImages = [];
+let galleryIndex = 0;
+
+function openImageModal(id) {
+  const modal = document.getElementById("imageModal");
+  const currentImg = document.getElementById(`img-${id}`);
+  const product = PRODUCTS[id];
+
+  // Photo actuellement affichee sur la carte (dependante de la contenance choisie) en premier,
+  // puis les photos supplementaires eventuelles (colonnes image2/image3 du Sheet), sans doublons.
+  const candidates = [currentImg ? currentImg.src : "", ...(product ? product.extraImages.map(resolveImageSrc) : [])];
+  galleryImages = [...new Set(candidates.filter(Boolean))];
+  galleryIndex = 0;
+
+  renderGallerySlide();
   modal.style.display = "block";
-  modalImg.src = imgSrc;
+}
+
+function renderGallerySlide() {
+  const modalImg = document.getElementById("modalImage");
+  const arrows = document.querySelectorAll(".gallery-arrow");
+  const dots = document.getElementById("gallery-dots");
+
+  modalImg.src = galleryImages[galleryIndex];
+
+  if (galleryImages.length > 1) {
+    arrows.forEach((a) => (a.style.display = "flex"));
+    dots.style.display = "flex";
+    dots.innerHTML = galleryImages
+      .map((_, i) => `<span class="gallery-dot ${i === galleryIndex ? "active" : ""}"></span>`)
+      .join("");
+  } else {
+    arrows.forEach((a) => (a.style.display = "none"));
+    dots.style.display = "none";
+  }
+}
+
+function nextGalleryImage(event) {
+  event.stopPropagation();
+  galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  renderGallerySlide();
+}
+
+function prevGalleryImage(event) {
+  event.stopPropagation();
+  galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+  renderGallerySlide();
 }
 
 function closeImageModal() {
