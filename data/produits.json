@@ -5,13 +5,13 @@
       "nom_produit": "Farine de manioc",
       "categorie": "farine",
       "emoji": "🌾",
-      "image": "farine-manioc.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "1kg",
-          "prix": 1200
+          "prix": 1200,
+          "image": "farine-manioc.jpeg"
         }
       ]
     },
@@ -20,21 +20,23 @@
       "nom_produit": "5 épices",
       "categorie": "epice",
       "emoji": "",
-      "image": "5-epices-150g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "150g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "5-epices-150g.jpeg"
         },
         {
           "contenance": "350g",
-          "prix": 4000
+          "prix": 4000,
+          "image": "5-epices-350g.jpeg"
         },
         {
           "contenance": "650g",
-          "prix": 6500
+          "prix": 6500,
+          "image": "5-epices-650g.jpeg"
         }
       ]
     },
@@ -43,17 +45,18 @@
       "nom_produit": "Farine de Kom assaisonnée",
       "categorie": "farine",
       "emoji": "",
-      "image": "farine-kom-assaisonnee.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "500g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "farine-kom-assaisonnee.jpeg"
         },
         {
           "contenance": "1kg",
-          "prix": 2000
+          "prix": 2000,
+          "image": "farine-kom-assaisonnee.jpeg"
         }
       ]
     },
@@ -62,13 +65,13 @@
       "nom_produit": "Gingembre moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "gingembre-moulu.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "200g",
-          "prix": 2700
+          "prix": 2700,
+          "image": "gingembre-moulu.jpeg"
         }
       ]
     },
@@ -77,29 +80,33 @@
       "nom_produit": "Cocktails d'épices",
       "categorie": "epice",
       "emoji": "",
-      "image": "cocktails-epices-200g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "200g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "cocktails-epices-200g.jpeg"
         },
         {
           "contenance": "100g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "cocktails-epices-100g.jpeg"
         },
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "cocktails-epices-70g.jpeg"
         },
         {
           "contenance": "350g",
-          "prix": 4000
+          "prix": 4000,
+          "image": "cocktails-epices-350g.jpeg"
         },
         {
           "contenance": "650g",
-          "prix": 6500
+          "prix": 6500,
+          "image": "cocktails-epices-650g.jpeg"
         }
       ]
     },
@@ -108,25 +115,28 @@
       "nom_produit": "Piment Yazi",
       "categorie": "epice",
       "emoji": "",
-      "image": "piment-yazi-350g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "350g",
-          "prix": 3500
+          "prix": 3500,
+          "image": "piment-yazi-350g.jpeg"
         },
         {
           "contenance": "200g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "piment-yazi-200g.jpeg"
         },
         {
           "contenance": "100g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "piment-yazi-100g.jpeg"
         },
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "piment-yazi-70g.jpeg"
         }
       ]
     },
@@ -135,13 +145,13 @@
       "nom_produit": "Poudre de clou de giroffle",
       "categorie": "epice",
       "emoji": "",
-      "image": "poudre-clou-de-giroffle-100g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "poudre-clou-de-giroffle-100g.jpeg"
         }
       ]
     },
@@ -150,13 +160,13 @@
       "nom_produit": "La Badiane (anis étoilé)",
       "categorie": "epice",
       "emoji": "",
-      "image": "badiane-100g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1300
+          "prix": 1300,
+          "image": "badiane-100g.jpeg"
         }
       ]
     },
@@ -165,13 +175,13 @@
       "nom_produit": "Poudre de Moringa",
       "categorie": "epice",
       "emoji": "",
-      "image": "poudre-moringa-70g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "poudre-moringa-70g.jpeg"
         }
       ]
     },
@@ -180,13 +190,13 @@
       "nom_produit": "Poudre de cannelle",
       "categorie": "epice",
       "emoji": "",
-      "image": "poudre-canelle-10g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "10g",
-          "prix": 500
+          "prix": 500,
+          "image": "poudre-canelle-10g.jpeg"
         }
       ]
     },
@@ -195,13 +205,13 @@
       "nom_produit": "Ma Marinade",
       "categorie": "epice",
       "emoji": "",
-      "image": "marinade-400g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "400g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "marinade-400g.jpeg"
         }
       ]
     },
@@ -210,17 +220,18 @@
       "nom_produit": "Piment vert assaisonné",
       "categorie": "epice",
       "emoji": "",
-      "image": "piment-vert-assaisonne-400g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "400g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "piment-vert-assaisonne-400g.jpeg"
         },
         {
           "contenance": "300g",
-          "prix": 700
+          "prix": 700,
+          "image": "piment-vert-assaisonne-300g.jpeg"
         }
       ]
     },
@@ -229,17 +240,18 @@
       "nom_produit": "KPEDORA",
       "categorie": "epice",
       "emoji": "",
-      "image": "kpedora-320g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "320g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "kpedora-320g.jpeg"
         },
         {
           "contenance": "300g",
-          "prix": 700
+          "prix": 700,
+          "image": "kpedora-300g.jpeg"
         }
       ]
     },
@@ -248,21 +260,23 @@
       "nom_produit": "Sel Magic",
       "categorie": "epice",
       "emoji": "",
-      "image": "sel-magic-500g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "500g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "sel-magic-500g.jpeg"
         },
         {
           "contenance": "300g",
-          "prix": 1300
+          "prix": 1300,
+          "image": "sel-magic-300g.jpeg"
         },
         {
           "contenance": "100g",
-          "prix": 500
+          "prix": 500,
+          "image": "sel-magic-100g.jpeg"
         }
       ]
     },
@@ -271,17 +285,18 @@
       "nom_produit": "Poudre de curcuma",
       "categorie": "epice",
       "emoji": "",
-      "image": "poudre-curcuma-150g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "150g",
-          "prix": 1300
+          "prix": 1300,
+          "image": "poudre-curcuma-150g.jpeg"
         },
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "poudre-curcuma-70g.jpeg"
         }
       ]
     },
@@ -290,13 +305,13 @@
       "nom_produit": "Purée de gingembre",
       "categorie": "epice",
       "emoji": "",
-      "image": "puree-gingembre.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "puree-gingembre.jpeg"
         }
       ]
     },
@@ -305,13 +320,13 @@
       "nom_produit": "Purée d'ail",
       "categorie": "epice",
       "emoji": "",
-      "image": "puree-ail.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "puree-ail.jpeg"
         }
       ]
     },
@@ -320,21 +335,23 @@
       "nom_produit": "Épice viande",
       "categorie": "epice",
       "emoji": "",
-      "image": "epice-viande-150g.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "150g",
-          "prix": 2300
+          "prix": 2300,
+          "image": "epice-viande-150g.jpeg"
         },
         {
           "contenance": "100g",
-          "prix": 1200
+          "prix": 1200,
+          "image": "epice-viande-100g.jpeg"
         },
         {
           "contenance": "700g",
-          "prix": 500
+          "prix": 500,
+          "image": "epice-viande-700g.jpeg"
         }
       ]
     },
@@ -343,17 +360,18 @@
       "nom_produit": "Farine de maïs assaisonnée torrifiée| Farine de Amiwo",
       "categorie": "farine",
       "emoji": "",
-      "image": "farine-mais-assaisonnee.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "500g",
-          "prix": 1200
+          "prix": 1200,
+          "image": "farine-mais-assaisonnee.jpeg"
         },
         {
           "contenance": "1kg",
-          "prix": 2000
+          "prix": 2000,
+          "image": "farine-mais-assaisonnee.jpeg"
         }
       ]
     },
@@ -362,13 +380,13 @@
       "nom_produit": "Purée de tomate",
       "categorie": "epice",
       "emoji": "",
-      "image": "puree-tomate.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "puree-tomate.jpeg"
         }
       ]
     },
@@ -377,17 +395,18 @@
       "nom_produit": "Farine de Cossette d'Igname",
       "categorie": "farine",
       "emoji": "",
-      "image": "farine-cossette-igname.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "1kg",
-          "prix": 2000
+          "prix": 2000,
+          "image": "farine-cossette-igname.jpeg"
         },
         {
           "contenance": "5kg",
-          "prix": 7200
+          "prix": 7200,
+          "image": "farine-cossette-igname.jpeg"
         }
       ]
     },
@@ -396,17 +415,18 @@
       "nom_produit": "Farine de haricot",
       "categorie": "farine",
       "emoji": "🌾",
-      "image": "farine-haricot.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "500g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "farine-haricot.jpeg"
         },
         {
           "contenance": "1kg",
-          "prix": 2200
+          "prix": 2200,
+          "image": "farine-haricot.jpeg"
         }
       ]
     },
@@ -415,17 +435,18 @@
       "nom_produit": "WASSA WASSA PRECUIT",
       "categorie": "farine",
       "emoji": "🌾",
-      "image": "wassa-wassa.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "wassa-wassa.jpeg"
         },
         {
           "contenance": "500g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "wassa-wassa.jpeg"
         }
       ]
     },
@@ -434,21 +455,23 @@
       "nom_produit": "Piment noir de kom",
       "categorie": "epice",
       "emoji": "",
-      "image": "piment-noir-kom.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "piment-noir-kom.jpeg"
         },
         {
           "contenance": "100g",
-          "prix": 500
+          "prix": 500,
+          "image": "piment-noir-kom.jpeg"
         },
         {
           "contenance": "500g",
-          "prix": 2500
+          "prix": 2500,
+          "image": "piment-noir-kom.jpeg"
         }
       ]
     },
@@ -457,13 +480,13 @@
       "nom_produit": "Graine de moutarde",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -472,13 +495,13 @@
       "nom_produit": "Graine de moutarde moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -487,13 +510,13 @@
       "nom_produit": "Graine Chiiya",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -502,13 +525,13 @@
       "nom_produit": "Graine de lyn",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -517,13 +540,13 @@
       "nom_produit": "Graine de fénugrec",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -532,13 +555,13 @@
       "nom_produit": "Poudre de Fenugrec",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 700
+          "prix": 700,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -547,13 +570,13 @@
       "nom_produit": "Graine de Apki",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 700
+          "prix": 700,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -562,13 +585,13 @@
       "nom_produit": "Poudre de Apki",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 800
+          "prix": 800,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -577,13 +600,13 @@
       "nom_produit": "La Badiane",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "50g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -592,13 +615,13 @@
       "nom_produit": "Cumin",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -607,13 +630,13 @@
       "nom_produit": "Romarin Moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -622,13 +645,13 @@
       "nom_produit": "Poivre Blanc",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "50g",
-          "prix": 800
+          "prix": 800,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -637,13 +660,13 @@
       "nom_produit": "Poivre blanc moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -652,17 +675,18 @@
       "nom_produit": "Gingembre Moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 800
+          "prix": 800,
+          "image": "placeholder.jpg"
         },
         {
           "contenance": "150g",
-          "prix": 2000
+          "prix": 2000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -671,17 +695,18 @@
       "nom_produit": "Cadamum",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "50g",
-          "prix": 1000
+          "prix": 1000,
+          "image": "placeholder.jpg"
         },
         {
           "contenance": "400g",
-          "prix": 15000
+          "prix": 15000,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -690,13 +715,13 @@
       "nom_produit": "Poivre noir",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "70g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -705,13 +730,13 @@
       "nom_produit": "Laurier Moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1300
+          "prix": 1300,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -720,13 +745,13 @@
       "nom_produit": "Ail Moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -735,13 +760,13 @@
       "nom_produit": "Crevette moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 1500
+          "prix": 1500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -750,13 +775,13 @@
       "nom_produit": "Clou de girofle",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "50g",
-          "prix": 500
+          "prix": 500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -765,13 +790,13 @@
       "nom_produit": "Rondelle",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 800
+          "prix": 800,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -780,13 +805,13 @@
       "nom_produit": "Rondelle Moulu",
       "categorie": "epice",
       "emoji": "",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "100g",
-          "prix": 2500
+          "prix": 2500,
+          "image": "placeholder.jpg"
         }
       ]
     },
@@ -795,13 +820,13 @@
       "nom_produit": "Elixir drink SOUCHET (pack de 6)",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "elixir-souchet.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "Pack de 6",
-          "prix": 1800
+          "prix": 1800,
+          "image": "elixir-souchet.jpeg"
         }
       ]
     },
@@ -810,13 +835,13 @@
       "nom_produit": "Cocktail ANANAS & PAPAYE (pack de 6)",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "cocktail-ananas-papaye.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "Pack de 6",
-          "prix": 2500
+          "prix": 2500,
+          "image": "cocktail-ananas-papaye.jpeg"
         }
       ]
     },
@@ -825,13 +850,13 @@
       "nom_produit": "Cocktail ANANAS & GINGEMBRE (pack de 6 bouteilles de 25 cl)",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "cocktail-ananas-gingembre.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "Pack de 6",
-          "prix": 3000
+          "prix": 3000,
+          "image": "cocktail-ananas-gingembre.jpeg"
         }
       ]
     },
@@ -840,13 +865,13 @@
       "nom_produit": "Cocktail ANANAS & CITRON (pack de 6 bouteilles de 33 cl)",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "cocktail-ananas-citron.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "Pack de 6",
-          "prix": 2500
+          "prix": 2500,
+          "image": "cocktail-ananas-citron.jpeg"
         }
       ]
     },
@@ -855,13 +880,13 @@
       "nom_produit": "Cocktail ANANAS & BAOBAB (pack de 6 bouteilles de 33 cl)",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "cocktail-ananas-baobab.jpeg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "Pack de 6",
-          "prix": 2500
+          "prix": 2500,
+          "image": "cocktail-ananas-baobab.jpeg"
         }
       ]
     },
@@ -870,17 +895,18 @@
       "nom_produit": "Sirop de gingembre",
       "categorie": "jus",
       "emoji": "🥤",
-      "image": "placeholder.jpg",
       "image2": "",
       "image3": "",
       "variants": [
         {
           "contenance": "1l",
-          "prix": 2500
+          "prix": 2500,
+          "image": "placeholder.jpg"
         },
         {
           "contenance": "0,5l",
-          "prix": 1500
+          "prix": 1500,
+          "image": "placeholder.jpg"
         }
       ]
     }

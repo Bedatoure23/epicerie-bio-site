@@ -170,19 +170,17 @@ function groupProducts(rows) {
     const id = (row.id_produit || "").trim();
     if (!id) return;
 
-    const image = (row.image || "").trim();
-
     grouped[id] = {
       id,
       nom: (row.nom_produit || "").trim(),
       categorie: (row.categorie || "").trim(),
       emoji: (row.emoji || "").trim(),
-      // Photos supplementaires (facultatives) pour la galerie multi-angles.
+      // Photos supplementaires (facultatives) pour la galerie multi-angles, communes au produit.
       extraImages: [row.image2, row.image3].map((v) => (v || "").trim()).filter(Boolean),
       variants: (row.variants || []).map((v) => ({
         contenance: (v.contenance || "").trim(),
         prix: parseInt(v.prix, 10) || 0,
-        image: image,
+        image: (v.image || "").trim(),
       })),
     };
   });
