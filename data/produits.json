@@ -909,6 +909,20 @@
           "image": "placeholder.jpg"
         }
       ]
+    },
+    {
+      "id_produit": "farine-de-lafou",
+      "nom_produit": "Farine de Lafou",
+      "categorie": "farine",
+      "image2": "images/produits-admin/img_3640.jpeg",
+      "image3": "images/produits-admin/img_3639.jpeg",
+      "variants": [
+        {
+          "contenance": "500g",
+          "prix": 1500,
+          "image": "images/produits-admin/img_3639.jpeg"
+        }
+      ]
     }
   ]
 }
