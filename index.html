@@ -73,6 +73,15 @@
     ]
   }
   </script>
+  <!-- Netlify Identity : necessaire pour que les liens d'invitation/reinitialisation
+       de mot de passe (envoyes par email) fonctionnent, meme s'ils atterrissent
+       sur cette page plutot que directement sur /admin/ -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {});
+    }
+  </script>
 </head>
 <body>
 
