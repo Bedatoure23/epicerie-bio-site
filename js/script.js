@@ -50,7 +50,15 @@ function resolveImageSrc(image) {
   if (image.startsWith("http://") || image.startsWith("https://")) {
     return image;
   }
-  return `images/${image}`;
+  // Decap CMS enregistre deja un chemin complet depuis la racine du site
+  // (ex: images/produits-admin/photo.jpg), contrairement aux anciens noms
+  // de fichiers simples (ex: farine-manioc.jpeg) qui, eux, doivent etre
+  // prefixes par le dossier images/.
+  const cleaned = image.replace(/^\/+/, "");
+  if (cleaned.startsWith("images/")) {
+    return cleaned;
+  }
+  return `images/${cleaned}`;
 }
 
 // ======================
