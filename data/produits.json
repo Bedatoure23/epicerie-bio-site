@@ -513,7 +513,7 @@
     {
       "id_produit": "graine-chiiya",
       "nom_produit": "Graine Chiiya",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -528,7 +528,7 @@
     {
       "id_produit": "graine-lyn",
       "nom_produit": "Graine de lyn",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -543,7 +543,7 @@
     {
       "id_produit": "graine-fenugrec",
       "nom_produit": "Graine de fénugrec",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -573,7 +573,7 @@
     {
       "id_produit": "graine-apki",
       "nom_produit": "Graine de Apki",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -648,7 +648,7 @@
     {
       "id_produit": "poivre-blanc",
       "nom_produit": "Poivre Blanc",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -698,7 +698,7 @@
     {
       "id_produit": "cadamum",
       "nom_produit": "Cadamum",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -718,7 +718,7 @@
     {
       "id_produit": "poivre-noir-70g",
       "nom_produit": "Poivre noir",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -778,7 +778,7 @@
     {
       "id_produit": "clou-de-girofle",
       "nom_produit": "Clou de girofle",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -793,7 +793,7 @@
     {
       "id_produit": "rondelle",
       "nom_produit": "Rondelle",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
