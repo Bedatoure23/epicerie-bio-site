@@ -20,23 +20,23 @@
       "nom_produit": "5 épices",
       "categorie": "epice",
       "emoji": "",
-      "image2": "",
-      "image3": "",
+      "image2": "images/produits-admin/img_4200.jpeg",
+      "image3": "images/produits-admin/img_4200.jpeg",
       "variants": [
         {
           "contenance": "150g",
           "prix": 2000,
-          "image": "5-epices-150g.jpeg"
+          "image": "images/produits-admin/img_4203.jpeg"
         },
         {
           "contenance": "350g",
           "prix": 4000,
-          "image": "5-epices-350g.jpeg"
+          "image": "images/produits-admin/img_4202.jpeg"
         },
         {
           "contenance": "650g",
           "prix": 6500,
-          "image": "5-epices-650g.jpeg"
+          "image": "images/produits-admin/img_4201.jpeg"
         }
       ]
     },
