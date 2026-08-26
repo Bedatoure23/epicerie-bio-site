@@ -455,30 +455,35 @@
       "nom_produit": "Piment noir de kom",
       "categorie": "epice",
       "emoji": "",
-      "image2": "",
+      "image2": "images/produits-admin/img_4136.jpeg",
       "image3": "",
       "variants": [
         {
           "contenance": "300g",
           "prix": 1500,
-          "image": "piment-noir-kom.jpeg"
+          "image": "images/produits-admin/img_4135.jpeg"
         },
         {
-          "contenance": "100g",
+          "contenance": "50g",
           "prix": 500,
-          "image": "piment-noir-kom.jpeg"
+          "image": "images/produits-admin/img_4134.jpeg"
         },
         {
           "contenance": "500g",
           "prix": 2500,
-          "image": "piment-noir-kom.jpeg"
+          "image": "images/produits-admin/img_4136.jpeg"
+        },
+        {
+          "contenance": "1100g",
+          "prix": 7000,
+          "image": "images/produits-admin/img_4137.jpeg"
         }
       ]
     },
     {
       "id_produit": "graine-moutarde",
       "nom_produit": "Graine de moutarde",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -508,7 +513,7 @@
     {
       "id_produit": "graine-chiiya",
       "nom_produit": "Graine Chiiya",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -523,7 +528,7 @@
     {
       "id_produit": "graine-lyn",
       "nom_produit": "Graine de lyn",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -538,7 +543,7 @@
     {
       "id_produit": "graine-fenugrec",
       "nom_produit": "Graine de fénugrec",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -568,7 +573,7 @@
     {
       "id_produit": "graine-apki",
       "nom_produit": "Graine de Apki",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -643,7 +648,7 @@
     {
       "id_produit": "poivre-blanc",
       "nom_produit": "Poivre Blanc",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -693,7 +698,7 @@
     {
       "id_produit": "cadamum",
       "nom_produit": "Cadamum",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -713,7 +718,7 @@
     {
       "id_produit": "poivre-noir-70g",
       "nom_produit": "Poivre noir",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -773,7 +778,7 @@
     {
       "id_produit": "clou-de-girofle",
       "nom_produit": "Clou de girofle",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
@@ -788,7 +793,7 @@
     {
       "id_produit": "rondelle",
       "nom_produit": "Rondelle",
-      "categorie": "epice",
+      "categorie": "naturel",
       "emoji": "",
       "image2": "",
       "image3": "",
