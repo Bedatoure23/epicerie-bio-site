@@ -305,13 +305,13 @@
       "nom_produit": "Purée de gingembre",
       "categorie": "epice",
       "emoji": "",
-      "image2": "",
-      "image3": "",
+      "image2": "images/img_4374.jpeg",
+      "image3": "images/img_4374.jpeg",
       "variants": [
         {
           "contenance": "300g",
           "prix": 1500,
-          "image": "puree-gingembre.jpeg"
+          "image": "images/img_4374.jpeg"
         }
       ]
     },
