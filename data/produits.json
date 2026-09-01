@@ -320,13 +320,13 @@
       "nom_produit": "Purée d'ail",
       "categorie": "epice",
       "emoji": "",
-      "image2": "",
-      "image3": "",
+      "image2": "images/img_4375.jpeg",
+      "image3": "images/img_4375.jpeg",
       "variants": [
         {
           "contenance": "300g",
           "prix": 1500,
-          "image": "puree-ail.jpeg"
+          "image": "images/img_4375.jpeg"
         }
       ]
     },
