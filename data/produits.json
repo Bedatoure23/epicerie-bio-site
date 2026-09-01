@@ -240,18 +240,13 @@
       "nom_produit": "KPEDORA",
       "categorie": "epice",
       "emoji": "",
-      "image2": "",
-      "image3": "",
+      "image2": "images/img_4378.jpeg",
+      "image3": "images/img_4378.jpeg",
       "variants": [
         {
           "contenance": "320g",
           "prix": 1500,
-          "image": "kpedora-320g.jpeg"
-        },
-        {
-          "contenance": "300g",
-          "prix": 700,
-          "image": "kpedora-300g.jpeg"
+          "image": "images/img_4378.jpeg"
         }
       ]
     },
